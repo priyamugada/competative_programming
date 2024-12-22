@@ -1,0 +1,13 @@
+class Solution(object):
+    def plusOne(self, digits):
+        carry=1
+        n=len(digits)
+        for i in range(n-1,-1,-1):
+            digits[i]+=carry
+            if(digits[i]<10):
+                carry=0
+                break
+            digits[i]=0
+        if carry:
+            digits.insert(0,1)
+        return digits
